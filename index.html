@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bos Indicus | Mejoramiento Genético y Biotecnología Reproductiva Tropical</title>
+  <meta name="description" content="Plataforma especializada en mejoramiento genético, biotecnologías reproductivas (IATF, OPU-FIV) y evaluación de DEPs en ganado Bos indicus para Zootecnistas y Médicos Veterinarios Zootecnistas.">
+  
+  <!-- Typography Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      /* Color Palette: Bos Indicus Earth & Slate Theme */
+      --bg-dark: #0F1310;
+      --bg-card: #171E19;
+      --bg-card-hover: #1F2822;
+      --bg-accent: #232E27;
+      
+      --primary-nelore: #E6DFD5;     /* Blanco/Gris Claro Nelore */
+      --primary-nelore-glow: rgba(230, 223, 213, 0.15);
+      --brahman-ash: #B8B0A5;       /* Ceniza Brahman */
+      --accent-terracotta: #D96B27;  /* Terracota / Tierra Tropical */
+      --accent-terracotta-glow: rgba(217, 107, 39, 0.25);
+      --accent-amber: #E6A135;       /* Dorado Gyr */
+      --accent-emerald: #2E8B57;     /* Verde Pastizal / Biotecnología */
+      
+      --text-main: #F4F1EA;
+      --text-muted: #A3AFA6;
+      --text-sub: #7E8C82;
+      --border-color: rgba(230, 223, 213, 0.12);
+      --border-glow: rgba(217, 107, 39, 0.4);
+      
+      --font-title: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(217, 107, 39, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 85% 60%, rgba(230, 161, 53, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(46, 139, 87, 0.04) 0%, transparent 50%);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--bg-accent);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-terracotta);
+    }
+
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(15, 19, 16, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent-terracotta), var(--accent-amber));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 15px var(--accent-terracotta-glow);
+    }
+
+    .logo-text {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.5px;
+      color: var(--text-main);
+    }
+
+    .logo-text span {
+      color: var(--accent-terracotta);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-nelore);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-terracotta);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-terracotta), #B85218);
+      color: #FFF;
+      box-shadow: 0 4px 20px var(--accent-terracotta-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(217, 107, 39, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--primary-nelore);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-accent);
+      border-color: var(--brahman-ash);
+      transform: translateY(-2px);
+    }
+
+    /* Badge & Micro Components */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      background: rgba(217, 107, 39, 0.12);
+      border: 1px solid rgba(217, 107, 39, 0.3);
+      color: var(--accent-terracotta);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Layout Containers */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--primary-nelore);
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding-top: 10rem;
+      padding-bottom: 6rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-title);
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: var(--primary-nelore);
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(135deg, var(--accent-amber), var(--accent-terracotta));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .stat-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-terracotta);
+    }
+
+    .stat-card p {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+    }
+
+    /* Media Visual Box (GIF Section) */
+    .hero-media-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 0.8rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .media-wrapper {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      background: #000;
+    }
+
+    .media-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .media-overlay-badge {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      background: rgba(15, 19, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(230, 223, 213, 0.15);
+      padding: 0.8rem 1.2rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .media-overlay-badge i {
+      color: var(--accent-emerald);
+      font-size: 1.5rem;
+    }
+
+    .media-overlay-text h4 {
+      font-size: 0.95rem;
+      color: var(--primary-nelore);
+      font-weight: 600;
+    }
+
+    .media-overlay-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Breeds Showcase Grid */
+    .breeds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .breed-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .breed-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-terracotta), var(--accent-amber));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .breed-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(217, 107, 39, 0.3);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .breed-card:hover::before {
+      opacity: 1;
+    }
+
+    .breed-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--accent-amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .breed-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-nelore);
+      margin-bottom: 0.5rem;
+    }
+
+    .breed-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .breed-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .breed-tag {
+      font-size: 0.75rem;
+      background: rgba(230, 223, 213, 0.06);
+      color: var(--brahman-ash);
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      border: 1px solid rgba(230, 223, 213, 0.1);
+    }
+
+    /* Technical Infographic Section */
+    .infographic-section {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .infographic-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .infographic-image-box {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+
+    .infographic-image-box img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      display: block;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+
+    .infographic-image-box img:hover {
+      transform: scale(1.01);
+    }
+
+    /* Module / Protocols Section */
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .protocol-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2.2rem;
+      position: relative;
+    }
+
+    .protocol-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      color: var(--primary-nelore);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .protocol-card h3 i {
+      color: var(--accent-terracotta);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-top: 1.5rem;
+      border-left: 2px solid var(--bg-accent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.95rem;
+      top: 0.3rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-terracotta);
+      border: 3px solid var(--bg-card);
+    }
+
+    .timeline-day {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-amber);
+      text-transform: uppercase;
+    }
+
+    .timeline-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Skill Explorer & Interactive Toolkit */
+    .skill-card {
+      background: linear-gradient(135deg, var(--bg-card), var(--bg-accent));
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      background: rgba(46, 139, 87, 0.15);
+      border: 1px solid rgba(46, 139, 87, 0.3);
+      color: var(--accent-emerald);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-header {
+      margin-bottom: 2rem;
+    }
+
+    .skill-header h2 {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      color: var(--primary-nelore);
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-code-block {
+      background: #0B0E0C;
+      border: 1px solid rgba(230, 223, 213, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: var(--brahman-ash);
+      overflow-x: auto;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .skill-code-block .keyword { color: var(--accent-terracotta); }
+    .skill-code-block .string { color: var(--accent-amber); }
+    .skill-code-block .comment { color: var(--text-sub); }
+
+    /* Interactive Calculator / Simulator Mock */
+    .interactive-box {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .interactive-box h4 {
+      font-family: var(--font-title);
+      font-size: 1.2rem;
+      color: var(--primary-nelore);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .form-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-control label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .form-control select,
+    .form-control input {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-control select:focus,
+    .form-control input:focus {
+      border-color: var(--accent-terracotta);
+    }
+
+    .result-box {
+      background: rgba(217, 107, 39, 0.08);
+      border: 1px dashed var(--accent-terracotta);
+      border-radius: var(--radius-sm);
+      padding: 1.2rem;
+      color: var(--primary-nelore);
+      font-size: 0.95rem;
+    }
+
+    /* Modal for Image Preview */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(10px);
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 95%;
+      max-height: 90vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+      border: 1px solid var(--border-color);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 2rem;
+      right: 2.5rem;
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--accent-terracotta);
+    }
+
+    /* Footer */
+    footer {
+      background: #090C0A;
+      border-top: 1px solid var(--border-color);
+      padding: 4rem 0 2rem 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-title);
+      font-size: 1rem;
+      color: var(--primary-nelore);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-col ul li a {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--accent-terracotta);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(230, 223, 213, 0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-sub);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-dna"></i></div>
+        <div class="logo-text">BOS <span>INDICUS</span> GENETICS</div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#fisiologia">Fisiología</a></li>
+        <li><a href="#razas">Razas Cebuinas</a></li>
+        <li><a href="#infografia">Infografía Técnica</a></li>
+        <li><a href="#protocolos">Protocolos IATF</a></li>
+        <li><a href="#skill">Skill Profesional</a></li>
+      </ul>
+      <a href="#simulador" class="btn btn-primary">
+        <i class="fa-solid fa-calculator"></i> Simulador IATF
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero container">
+    <div class="hero-content">
+      <div class="badge">
+        <i class="fa-solid fa-microscope"></i> Exclusivo para Zootecnistas y Médicos Veterinarios
+      </div>
+      <h1>Mejoramiento Genético y Reproducción en <span>Bos Indicus</span></h1>
+      <p class="hero-description">
+        Optimice los parámetros reproductivos y genéticos en ganadería cebuina (Brahman, Nelore, Gyr, Guzerá). Implemente biotecnologías avanzadas (IATF, OPU-FIV) y criterios de selección por DEPs en el trópico bajo e intermedio.
+      </p>
+      <div class="hero-actions">
+        <a href="#infografia" class="btn btn-primary">
+          <i class="fa-solid fa-circle-nodes"></i> Ver Infografía Técnica
+        </a>
+        <a href="#skill" class="btn btn-secondary">
+          <i class="fa-solid fa-code"></i> Explorar Skill de Selección
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <h3>10-12 mm</h3>
+          <p>Diámetro Folículo Dominante</p>
+        </div>
+        <div class="stat-card">
+          <h3>14-21 Días</h3>
+          <p>Intervalo Colecta OPU</p>
+        </div>
+        <div class="stat-card">
+          <h3>+85%</h3>
+          <p>Eficiencia Biotecnológica</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Media GIF Visual -->
+    <div class="hero-media-card">
+      <div class="media-wrapper">
+        <img src="Veterinarian_examining_Nelore_cow_20261008135344.gif" alt="Examen Clínico Veterinario en Vaca Nelore - Biotecnología Reproductiva">
+      </div>
+      <div class="media-overlay-badge">
+        <i class="fa-solid fa-stethoscope"></i>
+        <div class="media-overlay-text">
+          <h4>Evaluación Clínica y Ecográfica *in situ*</h4>
+          <p>Monitoreo folicular y diagnóstico reproductivo en hembras Nelore y Brahman.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Razas Cebuinas Grid -->
+  <section id="razas" class="container">
+    <div class="section-title-wrap">
+      <h2 class="section-title">Pilares Raciales Bos Indicus</h2>
+      <p class="section-subtitle">Adaptación bioclimática superior, rusticidad y potencial de selección genómica para carne y leche en condiciones tropicales.</p>
+    </div>
+
+    <div class="breeds-grid">
+      <!-- Nelore -->
+      <div class="breed-card">
+        <div class="breed-icon"><i class="fa-solid fa-cow"></i></div>
+        <h3>Nelore</h3>
+        <p>Línea de carne de alta eficiencia metabólica, excelente habilidad materna y alta densidad folicular antral para programas OPU/FIV.</p>
+        <div class="breed-tags">
+          <span class="breed-tag">Carne Tropical</span>
+          <span class="breed-tag">Alta Reserva Antral</span>
+          <span class="breed-tag">Rusticidad</span>
+        </div>
+      </div>
+
+      <!-- Brahman -->
+      <div class="breed-card">
+        <div class="breed-icon"><span style="font-weight: 800;">B</span></div>
+        <h3>Brahman (Blanco/Rojo)</h3>
+        <p>Estándar global para capacidad de crecimiento, rendimiento en canal (AOL) y heterosis en cruzamientos industrializados.</p>
+        <div class="breed-tags">
+          <span class="breed-tag">Crecimiento (P18M)</span>
+          <span class="breed-tag">Área Ojo de Lomo</span>
+          <span class="breed-tag">Perímetro Escrotal</span>
+        </div>
+      </div>
+
+      <!-- Gyr -->
+      <div class="breed-card">
+        <div class="breed-icon"><i class="fa-solid fa-fill-drip"></i></div>
+        <h3>Gyr Lechero</h3>
+        <p>Especialización láctea en el trópico. Evaluación por PTA/DEP de leche (kg/lactancia), persistencia de curva y conformación de ubre.</p>
+        <div class="breed-tags">
+          <span class="breed-tag">PTA Leche (kg)</span>
+          <span class="breed-tag">Grasa y Proteína</span>
+          <span class="breed-tag">Tolerancia Térmica</span>
+        </div>
+      </div>
+
+      <!-- Guzerá -->
+      <div class="breed-card">
+        <div class="breed-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h3>Guzerá</h3>
+        <p>Raza de doble propósito por excelencia. Notable fortaleza esquelética, fertilidad bajo estrés hídrico y longeva vida útil.</p>
+        <div class="breed-tags">
+          <span class="breed-tag">Doble Propósito</span>
+          <span class="breed-tag">Resistencia Térmica</span>
+          <span class="breed-tag">Habilidad Materna</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Infographic Section -->
+  <section id="infografia" class="infographic-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="badge"><i class="fa-solid fa-diagram-project"></i> Arquitectura Genética y Reproductiva</div>
+        <h2 class="section-title">Infografía Integral Bos Indicus</h2>
+        <p class="section-subtitle">Mapa de procesos para evaluación de DEPs, protocolos IATF y biotecnología celular (OPU-FIV). Haga clic sobre la imagen para ampliar.</p>
+      </div>
+
+      <div class="infographic-container">
+        <div class="infographic-image-box" onclick="openModal('Bos Indicus_ Genética y Reproducción Tropical.png')">
+          <img src="Bos Indicus_ Genética y Reproducción Tropical.png" alt="Infografía de Mejoramiento Genético y Reproducción Tropical Bos Indicus">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Protocolos Hormonales e IATF -->
+  <section id="protocolos" class="container">
+    <div class="section-title-wrap">
+      <h2 class="section-title">Protocolos Reproductivos de Precisión</h2>
+      <p class="section-subtitle">Ajuste de tiempos y dosis hormonales para la fisiología endocrina cebuina.</p>
+    </div>
+
+    <div class="protocol-grid">
+      <!-- Protocolo IATF -->
+      <div class="protocol-card">
+        <h3><i class="fa-solid fa-syringe"></i> Protocolo IATF Base (Trópico)</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Sincronización ajustada para folículos dominantes de 10-12 mm en vacas/novillas Bos indicus.</p>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-day">Día 0 (Inicio)</div>
+            <div class="timeline-desc">Inserción de dispositivo intravaginal P4 (0.5g - 1.0g) + 2.0 mg Benzoato de Estradiol (BE).</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-day">Día 7 o 8 (Retiro)</div>
+            <div class="timeline-desc">Retiro P4 + PGF₂α (D-cloprostenol 150 mcg) + eCG (200-300 UI si CC < 2.75) + 1.0 mg Cipionato de Estradiol (ECP).</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-day">Día 10 (48h pos-retiro)</div>
+            <div class="timeline-desc">Inseminación Artificial a Tiempo Fijo (IATF) con semen de toros probados por DEP.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Protocolo OPU - FIV -->
+      <div class="protocol-card">
+        <h3><i class="fa-solid fa-microscope"></i> Aspiración Folicular (OPU) y FIV</h3>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Aprovechamiento de la alta reserva de folículos antrales primordiales en razas cebuinas.</p>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-day">Intervalo OPU</div>
+            <div class="timeline-desc">Colectas ecoguiadas cada 14 a 21 días para evitar el agotamiento de la dinámica folicular.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-day">Clasificación Oocitaria</div>
+            <div class="timeline-desc">Selección estricta de oocitos Grado I y II con cúmulus denso pre-maduración (MIV).</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-day">Transferencia (TNE)</div>
+            <div class="timeline-desc">Implantación de blastocistos D7 en receptoras sincronizadas con concordancia de cuerpo lúteo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simulator Mock -->
+    <div id="simulador" class="interactive-box">
+      <h4><i class="fa-solid fa-sliders"></i> Calculador Técnico de Dosis de eCG para IATF</h4>
+      <div class="form-group">
+        <div class="form-control">
+          <label for="breed-select">Raza / Biotipo:</label>
+          <select id="breed-select" onchange="calculateDose()">
+            <option value="nelore">Nelore (Carne)</option>
+            <option value="brahman">Brahman (Carne/Crecimiento)</option>
+            <option value="gyr">Gyr / Guzerá (Leche/Doble Propósito)</option>
+          </select>
+        </div>
+        <div class="form-control">
+          <label for="cc-select">Condición Corporal (Escala 1 - 5):</label>
+          <select id="cc-select" onchange="calculateDose()">
+            <option value="low">CC < 2.5 (Anestro Profundo)</option>
+            <option value="mid" selected>CC 2.75 - 3.0 (Moderada)</option>
+            <option value="high">CC > 3.25 (Optima)</option>
+          </select>
+        </div>
+        <div class="form-control">
+          <label for="category-select">Categoría Animal:</label>
+          <select id="category-select" onchange="calculateDose()">
+            <option value="vaca">Vaca Parida en Anestro</option>
+            <option value="novilla">Novilla de Primer Celo</option>
+          </select>
+        </div>
+      </div>
+      <div class="result-box" id="dose-result">
+        <strong>Recomendación Hormonal:</strong> Aplicar 300 UI de eCG al retiro del dispositivo P4 (Día 8) para estimular la ovulación y crecimiento del folículo dominante.
+      </div>
+    </div>
+  </section>
+
+  <!-- Skill Integration Section -->
+  <section id="skill" class="container">
+    <div class="skill-card">
+      <div class="skill-badge"><i class="fa-solid fa-brain"></i> Skill Integrada & Módulo Técnico</div>
+      <div class="skill-header">
+        <h2>Habilidad de Mejoramiento Genético Bos Indicus</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+          Consulte los lineamientos estructurados en la Skill profesional (<code>habilidad_mejoramiento_gen_tico_bos_indicus.md</code>) para toma de decisiones zootécnicas y veterinarias.
+        </p>
+      </div>
+
+      <div class="skill-code-block">
+<span class="comment"># Extracto del Manifiesto de la Skill de Selección Bos Indicus</span>
+<span class="keyword">name</span>: mejoramiento-genetico-bos-indicus
+<span class="keyword">criterios_seleccion</span>:
+  <span class="keyword">linea_carne</span>: [Días Abiertos, EPP, PE_18m, Peso_Destete, AOL, EGD]
+  <span class="keyword">linea_leche</span>: [PTA_Leche_kg, Grasa_Proteina_Pct, Sistema_Mamario]
+<span class="keyword">fisiologia_cebuina</span>:
+  <span class="keyword">diametro_foliculo_ovulatorio</span>: "10-12 mm"
+  <span class="keyword">manifestacion_celo</span>: "Predominantemente nocturna y corta duración"
+  <span class="keyword">cuerpo_luteo</span>: "Menor volumen y menor P4 circulante"
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="habilidad_mejoramiento_gen_tico_bos_indicus.md" download class="btn btn-primary">
+          <i class="fa-solid fa-file-arrow-down"></i> Descargar Documento de la Skill (.md)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Full Infographic View -->
+  <div class="modal" id="imgModal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Vista Ampliada Infografía">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon"><i class="fa-solid fa-dna"></i></div>
+            <div class="logo-text">BOS <span>INDICUS</span></div>
+          </a>
+          <p>
+            Plataforma de alta especialización zootécnica y médico-veterinaria para el desarrollo de la ganadería tropical de precisión.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Biotecnologías</h4>
+          <ul>
+            <li><a href="#protocolos">Protocolos IATF</a></li>
+            <li><a href="#protocolos">Aspiración Folicular OPU</a></li>
+            <li><a href="#protocolos">Fertilización In Vitro (FIV)</a></li>
+            <li><a href="#protocolos">Transferencia de Embriones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Evaluación Genética</h4>
+          <ul>
+            <li><a href="#razas">DEPs Carne (AOL, EGD)</a></li>
+            <li><a href="#razas">PTA Leche Gyr</a></li>
+            <li><a href="#razas">Perímetro Escrotal</a></li>
+            <li><a href="#razas">Edad al Primer Parto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="#infografia">Infografía HD</a></li>
+            <li><a href="#skill">Skill Markdown</a></li>
+            <li><a href="#simulador">Calculador eCG</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bos Indicus Genetics & Reproduction. Diseñado para profesionales en Zootecnia y Medicina Veterinaria.</p>
+        <p>Desarrollado con estándares zootécnicos de trópico bajo.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Interactive Dose Calculator
+    function calculateDose() {
+      const cc = document.getElementById('cc-select').value;
+      const breed = document.getElementById('breed-select').value;
+      const category = document.getElementById('category-select').value;
+      const doseBox = document.getElementById('dose-result');
+
+      let dose = "";
+      let note = "";
+
+      if (cc === 'low') {
+        dose = "300 - 400 UI de eCG (Equine Chorionic Gonadotropin)";
+        note = "Obligatoria para reactivar dinamismo folicular en anestro profundo.";
+      } else if (cc === 'mid') {
+        dose = "200 - 300 UI de eCG";
+        note = "Recomendada para maximizar tasa de ovulación y tamaño del cuerpo lúteo.";
+      } else {
+        dose = "0 - 200 UI de eCG";
+        note = "En buena condición corporal la respuesta a LH endógena es óptima; eCG opcional según lote.";
+      }
+
+      doseBox.innerHTML = `<strong>Recomendación Hormonal:</strong> Aplicar <code>${dose}</code> al retiro del dispositivo P4 (Día 7u8). <em>${note}</em>`;
+    }
+
+    // Modal Image Functionality
+    function openModal(imgSrc) {
+      const modal = document.getElementById('imgModal');
+      const modalImg = document.getElementById('modalImg');
+      modal.classList.add('active');
+      modalImg.src = imgSrc;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imgModal');
+      modal.classList.remove('active');
+    }
+  </script>
+</body>
+</html>
